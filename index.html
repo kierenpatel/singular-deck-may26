@@ -3971,10 +3971,33 @@
       <div style="background: #fff; border-left: 3px solid var(--accent-deep); border-radius: 6px; padding: 10px 18px; font-size: 12px; color: #10141B; line-height: 1.55;">
         <strong style="color: var(--accent-deep);">Compounding loop.</strong> Every SSN contract adds cohorts. Every SlideBridge install adds passive tiles. Every license validated by a third party adds CDx credibility. <em style="color: var(--accent-deep); font-style: normal;">By Y4 the Atlas is the only spatial corpus a regulator can audit end-to-end.</em>
       </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px;">
+        <div style="background: #fff; border: 1px solid #D7DCE3; border-radius: 8px; padding: 12px 14px;">
+          <div style="font-size: 9px; letter-spacing: 0.16em; color: var(--accent-deep); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Y4 ATLAS · CASES</div>
+          <div style="font-size: 26px; color: #10141B; font-weight: 800; line-height: 1; font-family: var(--font-mono); letter-spacing: -0.02em;">~12K</div>
+          <div style="font-size: 10.5px; color: #6B7689; line-height: 1.4; margin-top: 4px;">paired (spatial + clinical + outcome) cases</div>
+        </div>
+        <div style="background: #fff; border: 1px solid #D7DCE3; border-radius: 8px; padding: 12px 14px;">
+          <div style="font-size: 9px; letter-spacing: 0.16em; color: var(--accent-deep); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Y4 ACTIVE LICENSES</div>
+          <div style="font-size: 26px; color: #10141B; font-weight: 800; line-height: 1; font-family: var(--font-mono); letter-spacing: -0.02em;">~6</div>
+          <div style="font-size: 10.5px; color: #6B7689; line-height: 1.4; margin-top: 4px;">blended ASP ~$3.3M · pharma + AI-bio</div>
+        </div>
+        <div style="background: #fff; border: 1px solid #D7DCE3; border-radius: 8px; padding: 12px 14px;">
+          <div style="font-size: 9px; letter-spacing: 0.16em; color: var(--accent-deep); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Y4 ARR · ATLAS</div>
+          <div style="font-size: 26px; color: var(--accent-deep); font-weight: 800; line-height: 1; font-family: var(--font-mono); letter-spacing: -0.02em;">~$14M</div>
+          <div style="font-size: 10.5px; color: #6B7689; line-height: 1.4; margin-top: 4px;">95%+ gross margin · build-once-license-many</div>
+        </div>
+        <div style="background: rgba(58,143,124,0.06); border: 1px solid var(--accent-deep); border-radius: 8px; padding: 12px 14px;">
+          <div style="font-size: 9px; letter-spacing: 0.16em; color: var(--accent-deep); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Replication moat</div>
+          <div style="font-size: 26px; color: var(--accent-deep); font-weight: 800; line-height: 1; font-family: var(--font-mono); letter-spacing: -0.02em;">5+ yr</div>
+          <div style="font-size: 10.5px; color: #6B7689; line-height: 1.4; margin-top: 4px;">for any competitor to assemble equivalent</div>
+        </div>
+      </div>
     </div>
     <div class="footer">
       <span>Singular Genomics · Board · May 2026</span>
-      <span class="source">Build assumption: harmonization stack on existing OMOP + CDISC frameworks (no novel ontology). Re-identification risk modeling per HHS HIPAA Expert Determination methodology. Comparable: Tempus &amp; Caris data-license terms (per S-1 filings).</span>
+      <span class="source">Harmonization on existing OMOP + CDISC frameworks. Re-identification risk per HHS HIPAA Expert Determination. Comparable: Tempus &amp; Caris data-license terms (S-1 filings).</span>
     </div>
   </section>
 
@@ -4119,11 +4142,49 @@
         <h4>Inputs</h4>
         <h3>Spatial RNA + protein + H&amp;E + IHC, paired to outcome.</h3>
         <p>Singular SSN runs the multiplex spatial assay; the input layer carries far more information than the IHC slide a pathologist sees. Each algorithm trains on (spatial measurement → human pathologist score → drug response) triplets.</p>
+        <div style="margin-top: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div style="background: rgba(94,224,192,0.06); border-left: 3px solid var(--accent); border-radius: 4px; padding: 10px 14px;">
+            <div style="font-size: 10px; letter-spacing: 0.16em; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Training cohort</div>
+            <div style="font-size: 18px; color: var(--text); font-weight: 800; line-height: 1; font-family: var(--font-mono);">200–500</div>
+            <div style="font-size: 10.5px; color: var(--text-dim); margin-top: 4px;">paired cases per marker</div>
+          </div>
+          <div style="background: rgba(94,224,192,0.06); border-left: 3px solid var(--accent); border-radius: 4px; padding: 10px 14px;">
+            <div style="font-size: 10px; letter-spacing: 0.16em; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Information density</div>
+            <div style="font-size: 18px; color: var(--text); font-weight: 800; line-height: 1; font-family: var(--font-mono);">100–300×</div>
+            <div style="font-size: 10.5px; color: var(--text-dim); margin-top: 4px;">vs single IHC slide</div>
+          </div>
+          <div style="background: rgba(94,224,192,0.06); border-left: 3px solid var(--accent); border-radius: 4px; padding: 10px 14px;">
+            <div style="font-size: 10px; letter-spacing: 0.16em; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Marker channels</div>
+            <div style="font-size: 18px; color: var(--text); font-weight: 800; line-height: 1; font-family: var(--font-mono);">12–40</div>
+            <div style="font-size: 10.5px; color: var(--text-dim); margin-top: 4px;">per spatial run</div>
+          </div>
+          <div style="background: rgba(94,224,192,0.06); border-left: 3px solid var(--accent); border-radius: 4px; padding: 10px 14px;">
+            <div style="font-size: 10px; letter-spacing: 0.16em; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Outcome ground truth</div>
+            <div style="font-size: 18px; color: var(--text); font-weight: 800; line-height: 1; font-family: var(--font-mono);">RECIST</div>
+            <div style="font-size: 10.5px; color: var(--text-dim); margin-top: 4px;">+ ORR, PFS, OS where available</div>
+          </div>
+        </div>
+        <div style="margin-top: 14px; padding: 10px 14px; background: rgba(94,224,192,0.04); border-radius: 4px; font-size: 11px; color: var(--text-dim); line-height: 1.5; font-style: italic;">Source feeds: SSN cohorts (P01) · KOL anchor sites · pharma trial samples under MTA. Replication cost for a competitor: 3+ years.</div>
       </div>
       <div class="pane rev">
         <h4>Outputs</h4>
         <h3>Continuous score · heterogeneity index · predicted-response curve.</h3>
         <p>For every patient slide: not "HER2-low yes/no" but a 0.0–1.0 continuous density score, a within-tumor heterogeneity coefficient, and a model-predicted response probability. Trial design uses the curve. Companion Dx uses the threshold.</p>
+        <div style="margin-top: 22px; display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; gap: 12px; padding: 10px 14px; background: rgba(94,224,192,0.06); border-left: 3px solid var(--accent); border-radius: 4px;">
+            <div style="font-family: var(--font-mono); color: var(--accent); font-weight: 800; font-size: 16px; line-height: 1.2; min-width: 30px;">01</div>
+            <div><div style="font-size: 13px; color: var(--text); font-weight: 700;">Trial design — pharma</div><div style="font-size: 11px; color: var(--text-dim); line-height: 1.45;">Pulls full response curve. Sets enrollment threshold to enrich responders 2–4× over IHC binary cutoff.</div></div>
+          </div>
+          <div style="display: flex; gap: 12px; padding: 10px 14px; background: rgba(94,224,192,0.06); border-left: 3px solid var(--accent); border-radius: 4px;">
+            <div style="font-family: var(--font-mono); color: var(--accent); font-weight: 800; font-size: 16px; line-height: 1.2; min-width: 30px;">02</div>
+            <div><div style="font-size: 13px; color: var(--text); font-weight: 700;">Companion Dx — clinical lab</div><div style="font-size: 11px; color: var(--text-dim); line-height: 1.45;">Pulls binary threshold above the trial-validated cutoff. Same model, same audit trail.</div></div>
+          </div>
+          <div style="display: flex; gap: 12px; padding: 10px 14px; background: rgba(94,224,192,0.06); border-left: 3px solid var(--accent); border-radius: 4px;">
+            <div style="font-family: var(--font-mono); color: var(--accent); font-weight: 800; font-size: 16px; line-height: 1.2; min-width: 30px;">03</div>
+            <div><div style="font-size: 13px; color: var(--text); font-weight: 700;">Heterogeneity flag — oncologist</div><div style="font-size: 11px; color: var(--text-dim); line-height: 1.45;">Spatial coefficient surfaces tumors that pass binary cutoff but harbor non-responsive sub-populations.</div></div>
+          </div>
+        </div>
+        <div style="margin-top: 14px; padding: 10px 14px; background: rgba(94,224,192,0.04); border-radius: 4px; font-size: 11px; color: var(--text-dim); line-height: 1.5; font-style: italic;">One model, three buyers. Output API gates each by access tier (pharma · lab · clinical).</div>
       </div>
     </div>
     <div class="footer">

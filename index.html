@@ -2784,108 +2784,217 @@
         </div>
       </div>
 
-      <!-- RIGHT: placement economics + headcount + risk -->
+      <!-- RIGHT: rollout map (SVG visualization of sites coming online by wave) + risks -->
       <div style="display: flex; flex-direction: column; gap: 10px;">
-        <div style="background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 11px 14px;">
-          <div style="font-size: 10px; letter-spacing: 0.16em; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">PLACEMENT ECONOMICS · per CEO slide 15</div>
-          <table style="width: 100%; font-size: 11px; color: var(--text); border-collapse: collapse;">
-            <tr><td style="padding: 2px 0; color: var(--text-dim);">G4X current COGS</td><td style="text-align: right;">$610K</td></tr>
-            <tr><td style="padding: 2px 0; color: var(--text-dim);">Target COGS (post-HPC redesign)</td><td style="text-align: right;">$320K</td></tr>
-            <tr><td style="padding: 2px 0; color: var(--text-dim);">Anchor placement fee paid in</td><td style="text-align: right;">$250–300K</td></tr>
-            <tr><td style="padding: 2px 0; color: var(--text-dim);">Net Singular capex / site</td><td style="text-align: right; font-weight: 700;">$310–360K</td></tr>
-            <tr style="border-top: 1px solid var(--border);"><td style="padding: 4px 0; color: var(--text-dim);">Kit margin (price $9K · margin $7K)</td><td style="text-align: right;">$7K</td></tr>
-            <tr><td style="padding: 2px 0; color: var(--text-dim);">Site capacity (4 kits/wk max)</td><td style="text-align: right;">~200 kits/yr</td></tr>
-            <tr><td style="padding: 2px 0; color: var(--text-dim);">Break-even site (current COGS)</td><td style="text-align: right; color: var(--accent); font-weight: 700;">15–17 mo</td></tr>
-            <tr><td style="padding: 2px 0; color: var(--text-dim);">Break-even site (target COGS)</td><td style="text-align: right; color: var(--accent); font-weight: 700;">8–10 mo</td></tr>
-          </table>
+        <div style="background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; flex: 1; min-height: 0; display: flex; flex-direction: column;">
+          <div style="font-size: 10px; letter-spacing: 0.16em; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">ROLLOUT MAP · SITES COMING ONLINE</div>
+          <svg viewBox="0 0 380 240" style="width: 100%; flex: 1; min-height: 0;">
+            <!-- US map outline (very stylized) -->
+            <path d="M 30,100 Q 50,80 90,75 Q 140,70 180,75 Q 230,72 270,80 Q 310,85 350,100 Q 360,130 350,160 Q 310,180 270,185 Q 230,190 180,188 Q 140,190 90,185 Q 50,180 30,160 Z" stroke="#2E3A4D" stroke-width="1" fill="rgba(58,143,124,0.04)"/>
+
+            <!-- SD central node — large mint pulsing circle -->
+            <circle cx="55" cy="155" r="14" fill="rgba(94,224,192,0.20)" stroke="var(--accent)" stroke-width="2"/>
+            <circle cx="55" cy="155" r="6" fill="var(--accent)"/>
+            <text x="55" y="180" text-anchor="middle" fill="var(--accent)" font-size="9" font-weight="700">SAN DIEGO · CENTRAL</text>
+
+            <!-- Wave 1 sites (cyan teal) -->
+            <circle cx="180" cy="105" r="6" fill="var(--accent-deep)"/>
+            <text x="180" y="98" text-anchor="middle" fill="var(--accent-deep)" font-size="7" font-weight="700">MSK</text>
+            <circle cx="180" cy="155" r="6" fill="var(--accent-deep)"/>
+            <text x="180" y="173" text-anchor="middle" fill="var(--accent-deep)" font-size="7" font-weight="700">MD AND</text>
+            <circle cx="220" cy="125" r="6" fill="var(--accent-deep)"/>
+            <text x="240" y="125" fill="var(--accent-deep)" font-size="7" font-weight="700">LABCORP/Q²</text>
+            <circle cx="245" cy="90" r="6" fill="var(--accent-deep)"/>
+            <text x="263" y="92" fill="var(--accent-deep)" font-size="7" font-weight="700">NCI FRED</text>
+
+            <!-- Wave 2 sites (medium accent) -->
+            <circle cx="270" cy="100" r="5" fill="rgba(94,224,192,0.55)"/>
+            <text x="280" y="105" fill="rgba(94,224,192,0.7)" font-size="7" font-weight="700">DANA-FARBER</text>
+            <circle cx="115" cy="140" r="5" fill="rgba(94,224,192,0.55)"/>
+            <text x="118" y="158" fill="rgba(94,224,192,0.7)" font-size="7" font-weight="700">STANFORD</text>
+            <circle cx="220" cy="155" r="5" fill="rgba(94,224,192,0.55)"/>
+            <text x="220" y="173" text-anchor="middle" fill="rgba(94,224,192,0.7)" font-size="7" font-weight="700">NEOGEN</text>
+            <circle cx="245" cy="120" r="5" fill="rgba(94,224,192,0.55)"/>
+            <text x="265" y="122" fill="rgba(94,224,192,0.7)" font-size="7" font-weight="700">NIH CC</text>
+
+            <!-- Wave 3 sites (faint outline) -->
+            <circle cx="270" cy="155" r="5" fill="none" stroke="rgba(94,224,192,0.5)" stroke-width="1.5" stroke-dasharray="2 2"/>
+            <text x="285" y="158" fill="rgba(154,166,184,0.85)" font-size="7" font-weight="600">CARIS</text>
+            <circle cx="155" cy="125" r="5" fill="none" stroke="rgba(94,224,192,0.5)" stroke-width="1.5" stroke-dasharray="2 2"/>
+            <text x="155" y="118" text-anchor="middle" fill="rgba(154,166,184,0.85)" font-size="7" font-weight="600">BARDA</text>
+            <circle cx="305" cy="135" r="5" fill="none" stroke="rgba(94,224,192,0.5)" stroke-width="1.5" stroke-dasharray="2 2"/>
+            <text x="320" y="138" fill="rgba(154,166,184,0.85)" font-size="7" font-weight="600">ROCHE</text>
+            <circle cx="305" cy="160" r="5" fill="none" stroke="rgba(94,224,192,0.5)" stroke-width="1.5" stroke-dasharray="2 2"/>
+            <text x="320" y="163" fill="rgba(154,166,184,0.85)" font-size="7" font-weight="600">AGILENT</text>
+
+            <!-- Federation lines from each spoke back to SD -->
+            <line x1="55" y1="155" x2="180" y2="105" stroke="var(--accent)" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.5"/>
+            <line x1="55" y1="155" x2="180" y2="155" stroke="var(--accent)" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.5"/>
+            <line x1="55" y1="155" x2="220" y2="125" stroke="var(--accent)" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.5"/>
+            <line x1="55" y1="155" x2="245" y2="90"  stroke="var(--accent)" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.5"/>
+
+            <!-- Legend -->
+            <g transform="translate(20, 10)">
+              <circle cx="6" cy="6" r="4" fill="var(--accent-deep)"/>
+              <text x="14" y="9" fill="#9AA6B8" font-size="8">Wave 1 (M6–12)</text>
+              <circle cx="105" cy="6" r="4" fill="rgba(94,224,192,0.55)"/>
+              <text x="113" y="9" fill="#9AA6B8" font-size="8">Wave 2 (M12–18)</text>
+              <circle cx="205" cy="6" r="4" fill="none" stroke="rgba(94,224,192,0.5)" stroke-width="1.5" stroke-dasharray="2 2"/>
+              <text x="213" y="9" fill="#9AA6B8" font-size="8">Wave 3 (M18–24)</text>
+            </g>
+          </svg>
+          <div style="font-size: 10px; color: var(--text-dim); line-height: 1.45; margin-top: 6px; font-style: italic;">12 placements over 18 months. Federation pipeline carries every site's spatial+clinical pairs back to SD.</div>
         </div>
-        <div style="background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 11px 14px;">
-          <div style="font-size: 10px; letter-spacing: 0.16em; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">HEADCOUNT · 24 MONTHS</div>
-          <table style="width: 100%; font-size: 11px; color: var(--text); border-collapse: collapse;">
-            <tr><td style="padding: 2px 0; color: var(--text-dim);">Services team</td><td style="text-align: right;">4 → 18</td></tr>
-            <tr><td style="padding: 2px 0; color: var(--text-dim);">Field Services</td><td style="text-align: right;">5 → 12</td></tr>
-            <tr><td style="padding: 2px 0; color: var(--text-dim);">Customer Care</td><td style="text-align: right;">6 → 14</td></tr>
-            <tr><td style="padding: 2px 0; color: var(--text-dim);">BD (placements)</td><td style="text-align: right;">5 → 9</td></tr>
-            <tr style="border-top: 1px solid var(--border);"><td style="padding: 4px 0; font-weight: 700;">Total adds</td><td style="text-align: right; font-weight: 700; color: var(--accent);">+33</td></tr>
-          </table>
-        </div>
+
         <div style="background: rgba(255,154,85,0.08); border: 1px solid #FF9A55; border-radius: 8px; padding: 9px 13px;">
           <div style="font-size: 10px; letter-spacing: 0.16em; color: #FF9A55; font-weight: 700; text-transform: uppercase; margin-bottom: 3px;">PRIMARY RISKS · MITIGATIONS</div>
-          <div style="font-size: 10.5px; color: var(--text-dim); line-height: 1.45;">Gov procurement 9–18 mo · pre-engaged via NCI/BARDA pre-RFP. CRO channel conflict · revenue-share pre-negotiated. Pharma BD stretch · Tier-2 hybrid cohorts bridge. G4X COGS reduction tracks Wave 2.</div>
+          <div style="font-size: 10.5px; color: var(--text-dim); line-height: 1.45;">Gov procurement 9–18 mo · pre-engaged via NCI/BARDA pre-RFP. CRO channel conflict · revenue-share pre-negotiated. Pharma BD stretch · Tier-2 hybrid cohorts bridge.</div>
         </div>
       </div>
     </div>
 
     <div class="footer">
       <span>Singular Genomics · Board · May 2026</span>
-      <span class="source">G4X COGS $610K current / $320K budget; placement-fee sensitivity (CEO slide 15, 11/12/25). Capacity 4 kits/wk max. Headcount baseline: Services 4, Field 5, Customer Care 6, BD 5 (slide 14). Cooperative-agreement size: NIH U24/U54 median $2.4M/yr/site.</span>
+      <span class="source">Site-rollout cadence per CEO slide 15 placement-fee sensitivity. Federation pipeline based on Singular existing data-handling stack (informed estimate).</span>
     </div>
   </section>
 
-  <!-- ============ P01 · Tier stack + economics (LIGHT) ============ -->
+  <!-- ============ P01 · How SSN works · sample flow (LIGHT) ============ -->
   <section class="slide light" data-slide="P01-econ">
-    <div class="eyebrow rev">PRODUCT 01 · ECONOMICS · TIER STACK</div>
+    <div class="eyebrow rev">PRODUCT 01 · HOW SSN WORKS</div>
     <div class="pagenum"></div>
-    <h2 class="title rev">Four tiers. Revenue today. Compounding data.</h2>
+    <h2 class="title rev">Tissue in. Cohort-grade data out. Every site contributes.</h2>
     <p class="subtitle rev" style="font-family: var(--font-serif); max-width: 1100px; color: #3C4452;">
-      The most boring product in the deck. <em style="color: var(--accent-deep); font-style: normal;">Also the most strategic.</em> Every tier ships paired spatial + clinical + outcome data — the seed corpus for Cohort Atlas, the training set for Virtual IHC, the validation backbone for QCS and Reflex CDx.
+      Same standard everywhere. <em style="color: var(--accent-deep); font-style: normal;">Pharma sends a brief; SSN routes the work to whichever node fits — central for CDx-grade, placements for capacity and gov-restricted samples.</em> Every cohort feeds the corpus that trains every other product.
     </p>
 
-    <div class="rev" style="margin-top: 14px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; flex: 1; min-height: 0;">
-      <!-- LEFT: 4 tiers -->
-      <div style="background: #fff; border: 1px solid #D7DCE3; border-radius: 10px; padding: 14px 18px; display: flex; flex-direction: column; gap: 8px;">
-        <div style="font-size: 10px; letter-spacing: 0.18em; color: var(--accent-deep); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">SERVICE TIERS</div>
-        <div style="border-left: 3px solid var(--accent-deep); padding: 6px 12px;">
-          <div style="font-size: 13px; color: #10141B; font-weight: 700;">Tier 1 · Discovery cohort</div>
-          <div style="font-size: 11px; color: #3C4452; line-height: 1.4;"><strong style="color: var(--accent-deep);">$50–150K</strong> · 50–200 cases · 6 wk · standard panel · pharma R&amp;D + academic.</div>
-        </div>
-        <div style="border-left: 3px solid var(--accent-deep); padding: 6px 12px;">
-          <div style="font-size: 13px; color: #10141B; font-weight: 700;">Tier 2 · Trial-grade cohort</div>
-          <div style="font-size: 11px; color: #3C4452; line-height: 1.4;"><strong style="color: var(--accent-deep);">$200–500K</strong> · 200–500 cases · 8–10 wk · custom panel · audit trail · CDx-ready.</div>
-        </div>
-        <div style="border-left: 3px solid var(--accent-deep); padding: 6px 12px;">
-          <div style="font-size: 13px; color: #10141B; font-weight: 700;">Tier 3 · Multi-year program</div>
-          <div style="font-size: 11px; color: #3C4452; line-height: 1.4;"><strong style="color: var(--accent-deep);">$1–3M / yr</strong> · rolling cohorts · co-publication rights · Cohort Atlas seed.</div>
-        </div>
-        <div style="border-left: 3px solid #C97935; padding: 6px 12px; background: rgba(201,121,53,0.05); border-radius: 0 4px 4px 0;">
-          <div style="font-size: 13px; color: #10141B; font-weight: 700;">Tier 4 · Anchor placement <span style="font-size: 9px; color: #C97935; font-weight: 700; letter-spacing: 0.1em;">NEW</span></div>
-          <div style="font-size: 11px; color: #3C4452; line-height: 1.4;"><strong style="color: #C97935;">$2–5M / yr · 3–5 yr term</strong> · gov cooperative agreement OR CRO master deal. G4X placement + service-team training + reagent supply + data-rights split.</div>
-        </div>
+    <div class="rev" style="margin-top: 16px; flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr; gap: 12px;">
+      <!-- Top: Sample-flow SVG diagram -->
+      <div style="background: #fff; border: 1px solid #D7DCE3; border-radius: 10px; padding: 14px 18px; flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 10px; letter-spacing: 0.18em; color: var(--accent-deep); font-weight: 700; text-transform: uppercase;">SAMPLE FLOW · ONE INTAKE, ONE STANDARD, MANY OUTPUTS</div>
+        <svg viewBox="0 0 1100 220" style="width: 100%; flex: 1; min-height: 0;">
+          <!-- INTAKE column -->
+          <g transform="translate(20, 30)">
+            <text x="55" y="0" text-anchor="middle" fill="var(--accent-deep)" font-size="10" font-weight="800" letter-spacing="2">INTAKE</text>
+            <rect x="0"  y="20" width="110" height="32" rx="6" fill="rgba(58,143,124,0.06)" stroke="var(--accent-deep)" stroke-width="1.5"/>
+            <text x="55" y="40" text-anchor="middle" fill="#10141B" font-size="11" font-weight="700">Pharma brief</text>
+            <rect x="0"  y="62" width="110" height="32" rx="6" fill="rgba(58,143,124,0.06)" stroke="var(--accent-deep)" stroke-width="1.5"/>
+            <text x="55" y="82" text-anchor="middle" fill="#10141B" font-size="11" font-weight="700">Gov / NCI brief</text>
+            <rect x="0"  y="104" width="110" height="32" rx="6" fill="rgba(58,143,124,0.06)" stroke="var(--accent-deep)" stroke-width="1.5"/>
+            <text x="55" y="124" text-anchor="middle" fill="#10141B" font-size="11" font-weight="700">CRO white-label</text>
+            <rect x="0"  y="146" width="110" height="32" rx="6" fill="rgba(58,143,124,0.06)" stroke="var(--accent-deep)" stroke-width="1.5"/>
+            <text x="55" y="166" text-anchor="middle" fill="#10141B" font-size="11" font-weight="700">Cancer center</text>
+          </g>
+
+          <!-- ROUTER -->
+          <g transform="translate(170, 30)">
+            <line x1="0" y1="36" x2="40" y2="36" stroke="#9AA6B8" stroke-width="1" stroke-dasharray="3 2"/>
+            <line x1="0" y1="78" x2="40" y2="78" stroke="#9AA6B8" stroke-width="1" stroke-dasharray="3 2"/>
+            <line x1="0" y1="120" x2="40" y2="120" stroke="#9AA6B8" stroke-width="1" stroke-dasharray="3 2"/>
+            <line x1="0" y1="162" x2="40" y2="162" stroke="#9AA6B8" stroke-width="1" stroke-dasharray="3 2"/>
+            <rect x="40" y="40" width="120" height="120" rx="8" fill="rgba(58,143,124,0.10)" stroke="var(--accent-deep)" stroke-width="2"/>
+            <text x="100" y="78" text-anchor="middle" fill="var(--accent-deep)" font-size="10" font-weight="800">ROUTING ENGINE</text>
+            <text x="100" y="100" text-anchor="middle" fill="#3C4452" font-size="10">CDx-grade?</text>
+            <text x="100" y="116" text-anchor="middle" fill="#3C4452" font-size="10">Sample restriction?</text>
+            <text x="100" y="132" text-anchor="middle" fill="#3C4452" font-size="10">Capacity?</text>
+            <text x="100" y="150" text-anchor="middle" fill="#3C4452" font-size="10">CRO contract?</text>
+          </g>
+
+          <!-- PROCESSING (central + placements) -->
+          <g transform="translate(370, 30)">
+            <line x1="0" y1="78" x2="40" y2="78" stroke="#9AA6B8" stroke-width="1" stroke-dasharray="3 2"/>
+            <text x="115" y="0" text-anchor="middle" fill="var(--accent-deep)" font-size="10" font-weight="800" letter-spacing="2">PROCESSING</text>
+            <rect x="40" y="20" width="180" height="58" rx="6" fill="#fff" stroke="var(--accent-deep)" stroke-width="2"/>
+            <text x="130" y="40" text-anchor="middle" fill="#10141B" font-size="11" font-weight="800">SD CENTRAL NODE</text>
+            <text x="130" y="56" text-anchor="middle" fill="#3C4452" font-size="9">CDx-grade · panel R&amp;D</text>
+            <text x="130" y="68" text-anchor="middle" fill="#3C4452" font-size="9">Tier-3 multi-year cohorts</text>
+
+            <rect x="40" y="88" width="180" height="58" rx="6" fill="#fff" stroke="var(--accent-deep)" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <text x="130" y="108" text-anchor="middle" fill="#10141B" font-size="11" font-weight="800">12 ANCHOR PLACEMENTS</text>
+            <text x="130" y="124" text-anchor="middle" fill="#3C4452" font-size="9">gov · CRO · Roche/Agilent · cancer ctrs</text>
+            <text x="130" y="136" text-anchor="middle" fill="#3C4452" font-size="9">capacity · access · co-sell</text>
+
+            <rect x="40" y="156" width="180" height="22" rx="6" fill="rgba(94,224,192,0.10)" stroke="var(--accent)" stroke-width="1"/>
+            <text x="130" y="172" text-anchor="middle" fill="var(--accent-deep)" font-size="10" font-weight="700">FEDERATION LAYER · containerized</text>
+          </g>
+
+          <!-- OUTPUTS column -->
+          <g transform="translate(620, 30)">
+            <line x1="0" y1="78" x2="40" y2="78" stroke="#9AA6B8" stroke-width="1" stroke-dasharray="3 2"/>
+            <text x="115" y="0" text-anchor="middle" fill="var(--accent-deep)" font-size="10" font-weight="800" letter-spacing="2">PER-COHORT OUTPUT</text>
+            <rect x="40" y="20" width="200" height="42" rx="6" fill="rgba(94,224,192,0.06)" stroke="var(--accent-deep)" stroke-width="1.5"/>
+            <text x="140" y="38" text-anchor="middle" fill="#10141B" font-size="11" font-weight="700">Cohort data package</text>
+            <text x="140" y="54" text-anchor="middle" fill="#3C4452" font-size="9">spatial + clinical + outcome triplets</text>
+            <rect x="40" y="72" width="200" height="42" rx="6" fill="rgba(94,224,192,0.06)" stroke="var(--accent-deep)" stroke-width="1.5"/>
+            <text x="140" y="90" text-anchor="middle" fill="#10141B" font-size="11" font-weight="700">Audit trail</text>
+            <text x="140" y="106" text-anchor="middle" fill="#3C4452" font-size="9">CDx-ready (when central) · ISO QMS</text>
+            <rect x="40" y="124" width="200" height="42" rx="6" fill="rgba(94,224,192,0.06)" stroke="var(--accent-deep)" stroke-width="1.5"/>
+            <text x="140" y="142" text-anchor="middle" fill="#10141B" font-size="11" font-weight="700">De-id'd corpus copy → SSN</text>
+            <text x="140" y="158" text-anchor="middle" fill="#3C4452" font-size="9">feeds Atlas + Virtual IHC training</text>
+          </g>
+
+          <!-- DOWNSTREAM PRODUCTS -->
+          <g transform="translate(910, 30)">
+            <line x1="0" y1="78" x2="30" y2="78" stroke="#9AA6B8" stroke-width="1" stroke-dasharray="3 2"/>
+            <text x="80" y="0" text-anchor="middle" fill="var(--accent-deep)" font-size="10" font-weight="800" letter-spacing="2">FEEDS</text>
+            <rect x="30" y="20" width="140" height="22" rx="4" fill="rgba(94,224,192,0.08)"/>
+            <text x="100" y="35" text-anchor="middle" fill="#10141B" font-size="10" font-weight="700">Cohort Atlas (P04)</text>
+            <rect x="30" y="46" width="140" height="22" rx="4" fill="rgba(94,224,192,0.08)"/>
+            <text x="100" y="61" text-anchor="middle" fill="#10141B" font-size="10" font-weight="700">Virtual IHC (P02)</text>
+            <rect x="30" y="72" width="140" height="22" rx="4" fill="rgba(94,224,192,0.08)"/>
+            <text x="100" y="87" text-anchor="middle" fill="#10141B" font-size="10" font-weight="700">QCS for ADCs (P05)</text>
+            <rect x="30" y="98" width="140" height="22" rx="4" fill="rgba(94,224,192,0.08)"/>
+            <text x="100" y="113" text-anchor="middle" fill="#10141B" font-size="10" font-weight="700">Reflex CDx (P06)</text>
+            <rect x="30" y="124" width="140" height="22" rx="4" fill="rgba(94,224,192,0.08)"/>
+            <text x="100" y="139" text-anchor="middle" fill="#10141B" font-size="10" font-weight="700">High-Plex (P07)</text>
+            <rect x="30" y="150" width="140" height="22" rx="4" fill="rgba(94,224,192,0.08)"/>
+            <text x="100" y="165" text-anchor="middle" fill="#10141B" font-size="10" font-weight="700">Box-Free Kit (P08)</text>
+          </g>
+
+          <!-- mid-flow connecting arrows -->
+          <line x1="590" y1="108" x2="660" y2="108" stroke="var(--accent-deep)" stroke-width="2" marker-end="url(#arr)"/>
+          <line x1="860" y1="108" x2="940" y2="108" stroke="var(--accent-deep)" stroke-width="2" marker-end="url(#arr)"/>
+          <defs>
+            <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M 0,0 L 10,5 L 0,10 z" fill="var(--accent-deep)"/>
+            </marker>
+          </defs>
+        </svg>
       </div>
 
-      <!-- RIGHT: per-cohort math + Y4 ARR + multiplier -->
-      <div style="display: flex; flex-direction: column; gap: 10px;">
-        <div style="background: #fff; border: 1px solid #D7DCE3; border-radius: 10px; padding: 12px 16px;">
-          <div style="font-size: 10px; letter-spacing: 0.18em; color: var(--accent-deep); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">PER-COHORT UNIT MATH · TIER 2</div>
-          <table style="width: 100%; font-size: 11.5px; color: #3C4452; border-collapse: collapse;">
-            <tr><td style="padding: 3px 0;">Contract value</td><td style="text-align: right; color: var(--accent-deep); font-weight: 700;">$300K</td></tr>
-            <tr><td style="padding: 3px 0;">G4X reagents + consumables</td><td style="text-align: right;">($60K)</td></tr>
-            <tr><td style="padding: 3px 0;">Lab labor (300 cases · 0.5h)</td><td style="text-align: right;">($45K)</td></tr>
-            <tr><td style="padding: 3px 0;">Compute + report</td><td style="text-align: right;">($25K)</td></tr>
-            <tr style="border-top: 1px solid #ECEFF3;"><td style="padding: 5px 0; font-weight: 700;">Gross margin</td><td style="text-align: right; font-weight: 700; color: var(--accent-deep);">$170K · 57%</td></tr>
-          </table>
+      <!-- Bottom: 4 service tier strips (no prices) + multiplier -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1.2fr; gap: 10px;">
+        <div style="background: #fff; border: 1px solid #D7DCE3; border-left: 3px solid var(--accent-deep); border-radius: 6px; padding: 10px 12px;">
+          <div style="font-size: 9px; letter-spacing: 0.16em; color: var(--accent-deep); font-weight: 700; text-transform: uppercase;">TIER 1</div>
+          <div style="font-size: 12px; color: #10141B; font-weight: 700; line-height: 1.3; margin-top: 2px;">Discovery cohort</div>
+          <div style="font-size: 10.5px; color: #3C4452; line-height: 1.4;">50–200 cases · 6 wk · standard panel</div>
         </div>
-        <div style="background: #fff; border: 1px solid #D7DCE3; border-radius: 10px; padding: 12px 16px;">
-          <div style="font-size: 10px; letter-spacing: 0.18em; color: var(--accent-deep); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Y4 ARR ROLL-UP · MODELED</div>
-          <table style="width: 100%; font-size: 11.5px; color: #3C4452; border-collapse: collapse;">
-            <tr><td style="padding: 3px 0;">Central — 50 cohorts × $300K</td><td style="text-align: right; font-weight: 700;">$15M</td></tr>
-            <tr><td style="padding: 3px 0;">CRO placements — 3 × $1.2M</td><td style="text-align: right; font-weight: 700;">$3.6M</td></tr>
-            <tr><td style="padding: 3px 0;">Cancer-center placements — 4 × $1M</td><td style="text-align: right; font-weight: 700;">$4M</td></tr>
-            <tr><td style="padding: 3px 0;">Gov anchors — 3 × $3M</td><td style="text-align: right; font-weight: 700;">$9M</td></tr>
-            <tr><td style="padding: 3px 0;">Roche/Agilent royalty</td><td style="text-align: right; font-weight: 700;">$4M</td></tr>
-            <tr style="border-top: 1px solid #ECEFF3;"><td style="padding: 5px 0; font-weight: 700;">Total · operational target</td><td style="text-align: right; font-weight: 700; color: var(--accent-deep);">~$36M</td></tr>
-          </table>
+        <div style="background: #fff; border: 1px solid #D7DCE3; border-left: 3px solid var(--accent-deep); border-radius: 6px; padding: 10px 12px;">
+          <div style="font-size: 9px; letter-spacing: 0.16em; color: var(--accent-deep); font-weight: 700; text-transform: uppercase;">TIER 2</div>
+          <div style="font-size: 12px; color: #10141B; font-weight: 700; line-height: 1.3; margin-top: 2px;">Trial-grade cohort</div>
+          <div style="font-size: 10.5px; color: #3C4452; line-height: 1.4;">200–500 cases · custom panel · audit</div>
         </div>
-        <div style="background: rgba(94,224,192,0.08); border: 1px solid var(--accent-deep); border-radius: 8px; padding: 10px 14px;">
-          <div style="font-size: 10px; letter-spacing: 0.18em; color: var(--accent-deep); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">THE STRATEGIC MULTIPLIER</div>
-          <div style="font-size: 11.5px; color: #3C4452; line-height: 1.5;">Every cohort = data we own (or co-own) post-publication. Y4 corpus: ~12K paired (spatial + clinical + outcome) cases — <em style="color: var(--accent-deep); font-style: normal;">the asset that funds, validates, and trains every product downstream.</em></div>
+        <div style="background: #fff; border: 1px solid #D7DCE3; border-left: 3px solid var(--accent-deep); border-radius: 6px; padding: 10px 12px;">
+          <div style="font-size: 9px; letter-spacing: 0.16em; color: var(--accent-deep); font-weight: 700; text-transform: uppercase;">TIER 3</div>
+          <div style="font-size: 12px; color: #10141B; font-weight: 700; line-height: 1.3; margin-top: 2px;">Multi-year program</div>
+          <div style="font-size: 10.5px; color: #3C4452; line-height: 1.4;">rolling cohorts · co-publication</div>
+        </div>
+        <div style="background: rgba(201,121,53,0.05); border: 1px solid #C97935; border-left: 3px solid #C97935; border-radius: 6px; padding: 10px 12px;">
+          <div style="font-size: 9px; letter-spacing: 0.16em; color: #C97935; font-weight: 700; text-transform: uppercase;">TIER 4 · NEW</div>
+          <div style="font-size: 12px; color: #10141B; font-weight: 700; line-height: 1.3; margin-top: 2px;">Anchor placement</div>
+          <div style="font-size: 10.5px; color: #3C4452; line-height: 1.4;">gov / CRO multi-year · G4X on-site</div>
+        </div>
+        <div style="background: rgba(94,224,192,0.10); border: 1px solid var(--accent-deep); border-radius: 6px; padding: 10px 12px;">
+          <div style="font-size: 9px; letter-spacing: 0.16em; color: var(--accent-deep); font-weight: 700; text-transform: uppercase;">THE MULTIPLIER</div>
+          <div style="font-size: 12px; color: #10141B; font-weight: 700; line-height: 1.3; margin-top: 2px;">Every tier feeds SSN</div>
+          <div style="font-size: 10.5px; color: #3C4452; line-height: 1.4;">corpus we own → trains every product</div>
         </div>
       </div>
     </div>
 
     <div class="footer">
       <span>Singular Genomics · Board · May 2026</span>
-      <span class="source">Pricing benchmarks: NeoGenomics translational $50–250K; Tempus cohort licensing $300–800K; Caris academic $100–500K. Tier-4 size: NCI U24/U54 median $2.4M/yr/site. Y4 ARR is a modeled trajectory, not a forecast.</span>
+      <span class="source">Service-tier definitions per Singular SSN service catalog (internal). Federation pipeline: containerized Singular pipeline + secure de-identified data return to SD. Tier 4 mechanism: NIH U24/U54 + CRO master agreement structures.</span>
     </div>
   </section>
 
